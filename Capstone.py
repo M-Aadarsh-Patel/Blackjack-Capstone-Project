@@ -18,17 +18,27 @@ def result_declaration(computer_final, player_final):
     elif computer_final and player_final >= 21:
         print(f"It's a draw!! (computer's score: {computer_final}, Your score {player_final})")
 
+
+def caluculate_score(hand):
+    score = sum(hand)
+    if score == 21:
+        return 0
+    else:
+       return score
+
+
 while True:
 
     playing = input("Do you want to play a game of Blackjack? (Type 'y' or 'n') ")
 
     if playing.lower() == 'y':
         player_cards = random.choices(cards, weights=None, cum_weights=None, k=2)
-        current_player_score = player_cards[0] + player_cards[1]
+        current_player_score = caluculate_score(hand=player_cards)
 
         computer_cards = random.choices(cards, weights=None, cum_weights=None, k=2)
-        computer_score = computer_cards[0] + computer_cards[1]
+        computer_score = caluculate_score(hand=computer_cards)
         
+
         print(f"Your cards: {player_cards}, Current Score:{current_player_score}")
         print(f"Computer's first card: {computer_cards[0]}")
 
@@ -41,7 +51,7 @@ while True:
             player_cards.append(chosen_card)
             final_player_cards = player_cards
 
-            final_player_score = current_player_score + chosen_card
+            final_player_score = caluculate_score(final_player_cards)
 
 
             print(f"Your cards: {final_player_cards}, Final Score: {final_player_score}")
@@ -58,7 +68,7 @@ while True:
                 computer_cards.append(random.choice(cards))
                 final_computer_cards = computer_cards
 
-                final_computer_score = computer_score + computer_cards[2]
+                final_computer_score = caluculate_score(final_computer_cards)
 
                 print(f"Computer's final hand: {final_computer_cards}")
 
