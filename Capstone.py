@@ -3,10 +3,16 @@ import random
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def deal_card(cards_to_be_dealt_to, K):
+
+    """This is a function writen to draw cards from the cards list"""
+
     for i in range(K):
         cards_to_be_dealt_to.append(random.choice(cards))
 
 def caluculate_score(hand):
+
+    """This is a funtion to caluculate the score of the player and the computer"""
+
     score = sum(hand)
     if score == 21:
         return 0
@@ -14,14 +20,11 @@ def caluculate_score(hand):
        return score
 
 def result_declaration(computer_final, player_final):
+
+    """This is a function writen to print the results based on the final scores of the computer and the player"""
+
     if player_final < computer_final < 21:
         print(f"The computer had a score of {computer_final}, Your score is {player_final}, the computer won!, You lost")
-
-    elif computer_final and player_final == 0:
-        print("You both had a Blackjack, its a draw!!")
-
-    elif computer_final == 0:
-        print("The computer had a Blackjack. You lost!!")
 
     elif player_final == 0:
         print("You had a Blackjack. You Win!!")
