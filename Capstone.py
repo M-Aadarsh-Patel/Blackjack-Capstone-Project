@@ -21,10 +21,10 @@ def result_declaration(computer_final, player_final):
         print("You both had a Blackjack, its a draw!!")
 
     elif computer_final == 0:
-        print("The computer had a Blackjack. You won!!")
+        print("The computer had a Blackjack. You lost!!")
 
     elif player_final == 0:
-        print("You had a Blackjack. You lost!!")
+        print("You had a Blackjack. You Win!!")
 
     elif computer_final >= 21 and player_final < 21:
         print(f"The computer had a score {computer_final}, You win!!")
@@ -37,7 +37,6 @@ def result_declaration(computer_final, player_final):
 
     elif computer_final and player_final >= 21:
         print(f"It's a draw!! (computer's score: {computer_final}, Your score {player_final})")
-
 
 
 while True:
