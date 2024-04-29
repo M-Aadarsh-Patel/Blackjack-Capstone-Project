@@ -85,7 +85,7 @@ while True:
                         
                     print(f"Computer's hand: {computer_cards}, Computer Score: {computer_score}")
                         
-                    while computer_score < 17:
+                    while computer_score != 0 and computer_score < 17:
 
                         print("The computer had a score less than 17, computer drew a card")
 
