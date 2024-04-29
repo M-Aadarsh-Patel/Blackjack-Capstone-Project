@@ -2,6 +2,22 @@ import random
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
+def result_declaration(computer_final, player_final):
+    if player_final < computer_final < 21:
+        print(f"The computer had a score of {computer_final}, Your score is {player_final}, the computer won!, You lost")
+
+    elif computer_final >= 21 and player_final < 21:
+        print(f"The computer had a score {computer_final}, You win!!")
+
+    elif player_final >= 21 and computer_final < 21:
+        print(f"You had a score of {player_final}, You lose!")
+
+    elif computer_final < player_final < 21:
+        print(f"you had a score of {player_final} which is greater than the computer's score of {computer_final}, You win!!")
+
+    elif computer_final and player_final >= 21:
+        print(f"It's a draw!! (computer's score: {computer_final}, Your score {player_final})")
+
 while True:
 
     playing = input("Do you want to play a game of Blackjack? (Type 'y' or 'n') ")
@@ -47,38 +63,12 @@ while True:
                 print(f"Computer's final hand: {final_computer_cards}")
 
                 
-                if final_player_score < final_computer_score < 21:
-                    print(f"The computer had a score of {final_computer_score}, Your score is {final_player_score}, the computer won!, You lost")
-
-                elif final_computer_score >= 21 and final_player_score < 21:
-                    print(f"The computer had a score {final_computer_score}, You win!!")
-
-                elif final_player_score >= 21 and final_computer_score < 21:
-                    print(f"You had a score of {final_player_score}, You lose!")
-
-                elif final_computer_score < final_player_score < 21:
-                    print(f"you had a score of {final_player_score} which is greater than the computer's score of {final_computer_score}, You win!!")
-
-                elif final_computer_score and final_player_score >= 21:
-                    print(f"It's a draw!! (computer's score: {final_computer_score}, Your score {final_player_score})")
+                result_declaration(computer_final=final_computer_score, player_final=final_player_score)
                     
             else:
                 final_computer_score = computer_score
 
-                if final_player_score < final_computer_score < 21:
-                    print(f"The computer had a score of {final_computer_score}, Your score is {final_player_score}, the computer won!, You lost")
-
-                elif final_computer_score >= 21 and final_player_score < 21:
-                    print(f"The computer had a score {final_computer_score}, You win!!")
-
-                elif final_player_score >= 21 and final_computer_score < 21:
-                    print(f"You had a score of {final_player_score}, You lose!")
-
-                elif final_computer_score < final_player_score < 21:
-                    print(f"you had a score of {final_player_score} which is greater than the computer's score of {final_computer_score}, You win!!")
-
-                elif final_computer_score and final_player_score >= 21:
-                    print(f"It's a draw!! (computer's score: {final_computer_score}, Your score {final_player_score})")
+                result_declaration(computer_final=final_computer_score, player_final=final_player_score)
 
                
         if card_choice.lower() == 'n':
@@ -86,20 +76,7 @@ while True:
             final_player_score = current_player_score
             final_computer_score = computer_score
 
-            if final_player_score < final_computer_score < 21:
-                print(f"The computer had a score of {final_computer_score}, Your score is {final_player_score}, the computer won!, You lost")
-
-            elif final_computer_score >= 21 and final_player_score < 21:
-                print(f"The computer had a score {final_computer_score}, You win!!")
-
-            elif final_player_score >= 21 and final_computer_score < 21:
-                print(f"You had a score of {final_player_score}, You lose!")
-
-            elif final_computer_score < final_player_score < 21:
-                print(f"you had a score of {final_player_score} which is greater than the computer's score of {final_computer_score}, You win!!")
-
-            elif final_computer_score and final_player_score >= 21:
-                print(f"It's a draw!! (computer's score: {final_computer_score}, Your score {final_player_score})")
+            result_declaration(computer_final=final_computer_score, player_final=final_player_score)
 
 
     if playing.lower() == 'n':
