@@ -1,3 +1,5 @@
 This is my project on the Blackjack Capstone project made with python.
 
 I am adding this about.txt becaue I dont know how to write a README.md file
+
+this is the shortest README.md ive ever seen.
